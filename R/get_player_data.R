@@ -28,7 +28,8 @@ get_player_data <- function(player_code) {
     rvest::html_children() %>%
     rvest::html_text2()
 
-  player <- stringr::str_split(scores, " ", n = 2, simplify = T)
+  player <- stringr::str_split(scores, " ", n = 2, simplify = T) %>%
+    as.data.frame()
   colnames(player) <- c("attibute", "rating")
 
   return(player)
