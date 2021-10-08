@@ -13,11 +13,8 @@
 #' dates <- sfscrape::get_dates(fifa_games)
 #'
 get_dates <- function(fifa_games) {
-  # define base url
-  base_url <- "https://sofifa.com"
-
   bind_dates <- function(string, game) {
-    html <- rvest::read_html(paste0(base_url, string))
+    html <- rvest::read_html(paste0("https://sofifa.com", string))
 
     # Read nodes with bp3-menu as the class tag, which contains all dropdown options
     elements <- rvest::html_elements(html, xpath = "//div[contains(@class,'bp3-menu')]")

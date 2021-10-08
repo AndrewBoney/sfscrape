@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_game_codes.R
 \name{get_game_codes}
 \alias{get_game_codes}
-\title{Get FIFA codes}
+\title{get_game_codes}
 \usage{
 get_game_codes()
 }
@@ -13,5 +13,6 @@ data.frame
 Get base codes for each FIFA game.
 }
 \examples{
-get_game_codes()
+sfscrape::get_game_codes()
+
 }

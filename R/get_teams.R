@@ -20,10 +20,8 @@
 #' all_teams <- purrr::map_dfr(codes, ~get_teams(13, .x), .id = "game")
 #'
 get_teams <- function(league_id, date_code) {
-  # define base url
-  base_url <- "https://sofifa.com"
   # build url
-  url <- paste0(base_url, "/teams?lg=", league_id, "&r=", date_code, "&set=true")
+  url <- paste0("https://sofifa.com", "/teams?lg=", league_id, "&r=", date_code, "&set=true")
   # read html page (league overview)
   html <- rvest::read_html(url)
   # extract team links

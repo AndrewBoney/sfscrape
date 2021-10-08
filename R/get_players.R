@@ -13,10 +13,8 @@
 #' # sfscrape::get_players("/team/10/manchester_city/", "220006")
 #'
 get_players <- function(team_code, date_code) {
-  # define base url
-  base_url <- "https://sofifa.com"
   # read html page (team overview)
-  html <- rvest::read_html(paste0(base_url, team_code, date_code))
+  html <- rvest::read_html(paste0("https://sofifa.com", team_code, date_code))
   # extract player links
   tmp <- html %>% rvest::html_elements(xpath = "//a[contains(@href,'/player/')]")
 

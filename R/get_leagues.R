@@ -19,11 +19,8 @@
 #' all_leauges <- purrr::map_dfr(codes, get_leagues, .id = "game")
 #'
 get_leagues <- function(game_code) {
-  # define base url
-  base_url <- "https://sofifa.com"
-
   # navigate to "teams" tab, for the given game
-  html <- rvest::read_html(paste0(base_url, "/teams", "?r=", game_code, "&set=true"))
+  html <- rvest::read_html(paste0("https://sofifa.com", "/teams", "?r=", game_code, "&set=true"))
 
   # data-placeholder="Leagues" indicates the league dropdown
   leagues <- html %>%

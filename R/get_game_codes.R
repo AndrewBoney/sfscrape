@@ -1,4 +1,4 @@
-#' Get FIFA codes
+#' get_game_codes
 #'
 #' Get base codes for each FIFA game.
 #'
@@ -6,15 +6,13 @@
 #' @export
 #'
 #' @examples
-#' get_game_codes()
+#' sfscrape::get_game_codes()
+#'
 get_game_codes <- function() {
-  # define base url
-  base_url <- "https://sofifa.com"
-
   ## Reading date codes
   #  SoFIFA has archived data going back a while. For this they have unique codes for each date, which allows
   #  you to combine that code with player / team data to read archived data for that date.
-  html <- rvest::read_html(base_url)
+  html <- rvest::read_html("https://sofifa.com")
 
   # Read nodes with bp3-menu as the class tag, which contains all dropdown options
   elements <- rvest::html_elements(html, xpath = "//div[contains(@class,'bp3-menu')]")
