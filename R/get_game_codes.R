@@ -1,3 +1,12 @@
+#' Get FIFA codes
+#'
+#' Get base codes for each FIFA game.
+#'
+#' @return data.frame
+#' @export
+#'
+#' @examples
+#' get_game_codes()
 get_game_codes <- function() {
   # define base url
   base_url <- "https://sofifa.com"
@@ -15,7 +24,7 @@ get_game_codes <- function() {
   output <- rvest::html_text(children)
   full_string <- stringr::str_remove_all(rvest::html_attr(children, "href"), "/")
   code <- stringr::str_extract(full_string, "[0-9]{6,6}")
-  comb <- data.frame(output = output, full_string = full_string, code = code)
+  comb <- data.frame(game = output, full_string = full_string, code = code)
   fifa <- dplyr::filter(comb, stringr::str_detect(output, "FIFA"))
 
   return(fifa)

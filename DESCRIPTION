@@ -1,17 +1,18 @@
 Package: sfscrape
-Title: What the Package Does (One Line, Title Case)
+Title: Scrape data from https://sofifa.com
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Andrew", "Boney", , "andrew.boney@hotmail.co.uk", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: Package for scraping player data from soFifa. Credit to https://github.com/valentinumbach/SoFIFA who wrote most of the original code. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
     dplyr,
+    magrittr,
+    purrr,
     rvest,
     stringr
