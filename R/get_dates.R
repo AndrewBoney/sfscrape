@@ -16,8 +16,6 @@ get_dates <- function(fifa_games) {
   # define base url
   base_url <- "https://sofifa.com"
 
-  dates <- NULL
-#  for (i in 1:length(fifa_games$full_string)) {
   bind_dates <- function(string, game) {
     html <- rvest::read_html(paste0(base_url, string))
 
@@ -38,7 +36,8 @@ get_dates <- function(fifa_games) {
     return(temp)
   }
 
-  dates <- purrr::map_df(1:nrow(fifa), ~bind_dates(fifa$full_string[.x], fifa$game[.x]))
+  dates <- purrr::map_df(1:nrow(fifa_games),
+                         ~bind_dates(fifa_games$full_string[.x], fifa_games$game[.x]))
 
   dates$date <- as.Date(dates$output, format = "%b %d, %Y")
   dates$output <- NULL

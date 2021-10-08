@@ -1,14 +1,15 @@
 #' get_leagues
 #'
-#' gets all available leagues for a given year, from the dropdown in https://sofifa.com/teams
+#' Gets all available leagues for a given year, from the dropdown in https://sofifa.com/teams
 #'
-#' @param game_code - should contain the code for a given fifa game, from sfscrape::get_game_codes
+#' @param game_code Should contain the code for a given fifa game, from sfscrape::get_game_codes
 #'
 #' @return df containing all leagues in FIFA
 #' @export
 #'
 #' @examples
 #'
+#' # Returns all available leagues in FIFA 22
 #' sfscrape::get_leagues(220006)
 #'
 #' # to get all games (requires purrr and dplyr installed)
