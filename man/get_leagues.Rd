@@ -7,18 +7,17 @@
 get_leagues(game_code)
 }
 \arguments{
-\item{game_code}{\itemize{
-\item should contain the code for a given fifa game, from sfscrape::get_game_codes
-}}
+\item{game_code}{Should contain the code for a given fifa game, from sfscrape::get_game_codes}
 }
 \value{
 df containing all leagues in FIFA
 }
 \description{
-gets all available leagues for a given year, from the dropdown in https://sofifa.com/teams
+Gets all available leagues for a given year, from the dropdown in https://sofifa.com/teams
 }
 \examples{
 
+# Returns all available leagues in FIFA 22
 sfscrape::get_leagues(220006)
 
 # to get all games (requires purrr and dplyr installed)

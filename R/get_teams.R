@@ -43,5 +43,5 @@ get_teams <- function(league_id, date_code) {
   teams$date_code <- date_code
 
   # return data frame
-  teams
+  return(teams)
 }
