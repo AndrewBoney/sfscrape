@@ -4,22 +4,21 @@
 \alias{get_dates}
 \title{get_dates}
 \usage{
-get_dates(fifa_games)
+get_dates(games)
 }
 \arguments{
-\item{fifa_games}{\itemize{
-\item should be df containing cols "game", "full_string", "code", from sfscrape::get_games_codes
+\item{games}{\itemize{
+\item Fifa game/s that you want dates for.
 }}
 }
 \value{
-df containing the dates for all games in input fifa_games df
+df containing the dates for all specified games.
 }
 \description{
 Gets all dates listed on sofifa for player stat updates, as well as associated codes for the urls
 }
 \examples{
 
-fifa_games <- sfscrape::get_game_codes()
-dates <- sfscrape::get_dates(fifa_games)
+dates <- sfscrape::get_dates("FIFA 22")
 
 }
